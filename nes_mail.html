@@ -1,0 +1,263 @@
+{% load eventurl %}
+{% load i18n %}
+{% load static %}
+{% load thumb %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=false">
+    <style type="text/css">
+        body {
+            background: white;
+            font-family: 'Source Sans Pro', sans-serif;
+	    font-size: 14px;
+            line-height: 20px;
+            color: #333;
+            margin: 0;
+            height: 100%;
+        }
+        .mother {
+        max-width: 900px;
+        margin: auto;
+        background: linear-gradient(90deg, rgba(22,72,87,1) 0%, rgba(31,105,132,1) 100%);
+
+        }
+ .nes_box {
+            box-shadow: 0 0 10px 1px #070707;
+            max-width: 700px;
+            margin: auto;
+            background-color: white;
+
+        }
+ .nes_box h2 {
+     margin-bottom: 0px;
+ }
+ .nes_box h1 {
+     margin-top: 0px;
+ }
+ nes_box p:first-of-type {
+     color: #164857
+ }
+ .box2 {
+            box-shadow: 0 0 10px 1px #070707;
+            max-width: 700px;
+            margin: auto;
+            background-color: white;
+            margin-top: 55px;
+        }
+ .footer {
+            height: auto;
+            width: 100%;
+            max-width: 700px;
+            margin: auto;
+            background-color: #feffff;
+
+
+        }
+ .footer:after {
+     content: "";
+     display: block;
+     clear: both;
+ }
+ .signatur {
+            padding-top: 15px;
+            padding-left: 20px;
+
+            width: 70%;
+            max-width: 600px;
+            border-collapse: separate;
+            border-spacing: 0px;
+            margin: auto;
+            background-color: white;
+            alignment: center;
+            justify-content: center;
+            text-align: left;
+         }
+ .signatur a {
+     text-decoration: none;
+     color: #164857
+ }
+ .signatur p:first-of-type {
+     color: #164857;
+ }
+ .signatur p:nth-of-type(2) {
+     color: #164857;
+
+ }
+.logo_div {
+            margin-top: 20px;
+
+            width: 30%;
+            max-width: 700px;
+            border-collapse: separate;
+            border-spacing: 0px;
+            background-color: white;
+            alignment: center;
+            justify-content: center;
+            text-align: left;
+
+            }
+         .logos {
+            display: inline-block;
+            justify-content: space-around;
+            flex-direction: column;
+            list-style: none;
+            float: left;
+        }
+
+         .logos a {
+             color: black;
+             text-decoration: none;
+         }
+         .logos_li {
+             padding-bottom: 10px;
+         }
+        .event_logo {
+            max-width: 700px;
+            margin: auto;
+
+            padding-bottom: 50px;
+
+        }
+
+        .event_logo img {
+            float: left;
+        }
+
+  a.button {
+            display: inline-block;
+            padding: 10px 16px;
+            font-size: 14px;
+            line-height: 1.33333;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            margin: 5px;
+            text-decoration: none;
+            color: {{ color }};
+        }
+   p {
+            margin: 0 0 10px;
+
+            /* These are technically the same, but use both */
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
+
+            -ms-word-break: break-all;
+
+            /* Adds a hyphen where the word breaks, if supported (No Blink) */
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
+
+    </style>
+       <style type="text/css">
+        body, table, td {
+          font-family: 'Source Sans Pro', sans-serif;
+	}
+    </style>
+</head>
+<body>
+<div class="mother">
+
+<br> <br> <br>
+{% if event.settings.logo_image %}
+<div class="event_logo">
+
+<img src="{{ site_url }}{{ event.settings.logo_image|thumb:'5000x120' }}" alt="{{ event.name }}"
+                             style="height: auto; max-width: 100%;" /></div>
+ {% endif %}
+<br>
+    <div class="nes_box" >
+        <table style=" border-collapse: separate; border-spacing: 50px;">
+            <tr>
+                <td class="header">
+                    <table>
+                        <tr>
+                            <td>
+                                {% if event %}
+                                    <h2 style="margin-bottom: 0px;"><a href="{% abseventurl event "presale:event.index" %}" style="color: black; text-decoration: none;">{{ event.name }}</a> </h2> <!-- TODO: Eventüberschrift -->
+                                {% else %}
+                                    <h2 style="margin-top: 0px;"><a href="{{ site_url }}" target="_blank">{{ site }}</a></h2>
+                                {% endif %}
+                                {% block header %}
+                                    <h1>{{ subject }}</h1>
+                                {% endblock %}
+                        <tr>
+                            <td>
+                                {{ body|safe }}
+                            </td>
+                        </tr>
+                        </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="box2">
+        {% if order %}
+            <table cellpadding="20" style=" border-collapse: separate; border-spacing: 20px 20px;">
+                <tr>
+                    <td >
+
+                        {% include "pretixbase/email/order_details.html" %}
+                    </td></tr></table>
+
+        {% endif %}
+</div>
+
+    <br><br> <br>
+<footer style="background-color: white; box-shadow: 5px 0 15px -2px rgb(165, 163, 163), -5px 0 8px -2px rgb(165, 163, 163);
+  font-family: 'Source Sans Pro', sans-serif;">
+<div class="footer">
+    <table>
+        <tr>
+    <td class="signatur">
+     {{ signature | safe }}
+
+    </td>
+
+    <td class="logo_div">
+        <ul class="logos">
+                <li class="logos_li"><img src="{% static 'pretix_nes_mail/Twitter.png' %}" alt="Twitter_Icon" style="vertical-align:middle; width: 20px; padding-right: 5px">
+                    {% with 'target="blank" href="https://netways.de"'|safe as a_attr %}
+    {% blocktrans trimmed %}   <a {{ a_attr }}>  netwaysevent   {% endblocktrans %}
+{% endwith %}</li>
+
+
+                <li class="logos_li"><img src="{% static 'pretix_nes_mail/Facebook.png' %}" alt="Facebook_image" style="vertical-align:middle; width: 20px; padding-right: 5px">
+                    {% with 'target="blank" href="https://de-de.facebook.com/netways"'|safe as a_attr %}
+                    {% blocktrans trimmed %}   <a {{ a_attr }}>    netways   {% endblocktrans %}
+                    {% endwith %}</li>
+
+
+                <li class="logos_li"><img src="{% static 'pretix_nes_mail/Instagram.png' %}" alt="Instagram_icon" style="vertical-align:middle; width: 20px; padding-right: 5px">
+                    {% with 'target="blank" href="https://www.instagram.com/netwaysgmbh"'|safe as a_attr %}
+                    {% blocktrans trimmed %}   <a {{ a_attr }}>    netwaysgmbh   {% endblocktrans %}
+                    {% endwith %}</li>
+
+
+                <li ><img src="{% static 'pretix_nes_mail/YouTube.png' %}" alt="Youtube_icon" style="alignment: left;vertical-align:middle; width: 20px; padding-right: 5px"    >
+                 {% with 'target="blank" href="https://www.youtube.com/channel/UC8nIBEFmjzXjXeJV_hkkeIQ"'|safe as a_attr %}
+                    {% blocktrans trimmed %}   <a {{ a_attr }}>    netways   {% endblocktrans %}
+                    {% endwith %}</li>
+		</ul>
+    </td>
+            <td style="width: 10%;  font-family: 'Source Sans Pro', sans-serif;">
+        <img src="{% static 'pretix_nes_mail/NES_Logo.png' %}" alt="NES_logo" style="vertical-align:middle; width: 50px; margin-left: 70px; padding-top: 75px;"></td>
+	</tr>
+        </table>
+</div>
+    <br>
+    <br> 
+   </footer>
+   
+</html>
+</html>

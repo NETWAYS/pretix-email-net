@@ -1,0 +1,5 @@
+recursive-include pretix_nes_mail/static *
+recursive-include pretix_nes_mail/templates *
+recursive-include pretix_nes_mail/locale *
+include LICENSE
+exclude .gitlab-ci.yml
