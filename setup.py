@@ -4,7 +4,7 @@ from distutils.command.build import build
 from django.core import management
 from setuptools import find_packages, setup
 
-from pretix_nes_mail import __version__
+
 
 
 try:
@@ -27,7 +27,7 @@ cmdclass = {"build": CustomBuild}
 
 setup(
     name="pretix_nes_mail",
-    version=__version__,
+    version='1.0',
     description="Short description",
     long_description=long_description,
     url="GitHub repository URL",
@@ -43,3 +43,4 @@ setup(
 pretix_nes_mail=pretix_nes_mail:PretixPluginMeta
 """,
 )
+

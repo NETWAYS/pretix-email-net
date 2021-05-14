@@ -9,33 +9,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=false">
     <style type="text/css">
-        body {
+         body {
             background: white;
             font-family: 'Source Sans Pro', sans-serif;
-	    font-size: 14px;
+            font-size: 14px;
             line-height: 20px;
             color: #333;
             margin: 0;
             height: 100%;
         }
+
         .mother {
-        max-width: 900px;
-        margin: auto;
-        background: linear-gradient(90deg, rgba(22,72,87,1) 0%, rgba(31,105,132,1) 100%);
+                max-width: 900px;
+                margin: auto;
+                background: linear-gradient(90deg, rgba(22,72,87,1) 0%, rgba(31,105,132,1) 100%);
 
         }
- .nes_box {
+        .nes_box {
             box-shadow: 0 0 10px 1px #070707;
             max-width: 700px;
-            margin: auto;
+            margin: 0 auto;
             background-color: white;
 
         }
  .nes_box h2 {
      margin-bottom: 0px;
- }
- .nes_box h1 {
-     margin-top: 0px;
  }
  nes_box p:first-of-type {
      color: #164857
@@ -49,31 +47,14 @@
         }
  .footer {
             height: auto;
-            width: 100%;
-            max-width: 700px;
             margin: auto;
             background-color: #feffff;
-
-
-        }
- .footer:after {
-     content: "";
-     display: block;
-     clear: both;
+            max-width: 100%;
+            display : table;
  }
  .signatur {
-            padding-top: 15px;
+            padding-top: 25px;
             padding-left: 20px;
-
-            width: 70%;
-            max-width: 600px;
-            border-collapse: separate;
-            border-spacing: 0px;
-            margin: auto;
-            background-color: white;
-            alignment: center;
-            justify-content: center;
-            text-align: left;
          }
  .signatur a {
      text-decoration: none;
@@ -86,9 +67,8 @@
      color: #164857;
 
  }
-.logo_div {
+ .logo_div {
             margin-top: 20px;
-
             width: 30%;
             max-width: 700px;
             border-collapse: separate;
@@ -97,14 +77,16 @@
             alignment: center;
             justify-content: center;
             text-align: left;
-
-            }
+ }
          .logos {
             display: inline-block;
             justify-content: space-around;
             flex-direction: column;
             list-style: none;
             float: left;
+            width: auto;
+            margin-top: 20px;
+            margin-left: 80px;
         }
 
          .logos a {
@@ -112,7 +94,8 @@
              text-decoration: none;
          }
          .logos_li {
-             padding-bottom: 10px;
+             padding-bottom: 20px;
+
          }
         .event_logo {
             max-width: 700px;
@@ -121,11 +104,9 @@
             padding-bottom: 50px;
 
         }
-
         .event_logo img {
             float: left;
         }
-
   a.button {
             display: inline-block;
             padding: 10px 16px;
@@ -139,6 +120,7 @@
             text-decoration: none;
             color: {{ color }};
         }
+
    p {
             margin: 0 0 10px;
 
@@ -155,12 +137,34 @@
             -webkit-hyphens: auto;
             hyphens: auto;
         }
+   @media screen and (min-width: 550px){
+           .fot {
+           width: 48%;
+           margin: 1%;
+           float: left;
+           }
+   }
+      @media screen and (min-width: 750px){
+           .fot {
+           width: 48%;
+           margin: 1%;
+           float: left;
+
+           }
+   }
+   @media screen and (min-width: 950px){
+           .fot {
+           width: 48%;
+           margin: 1%;
+           float: left;
+                    }
+   }
 
     </style>
        <style type="text/css">
         body, table, td {
           font-family: 'Source Sans Pro', sans-serif;
-	}
+        }
     </style>
 </head>
 <body>
@@ -187,7 +191,7 @@
                                     <h2 style="margin-top: 0px;"><a href="{{ site_url }}" target="_blank">{{ site }}</a></h2>
                                 {% endif %}
                                 {% block header %}
-                                    <h1>{{ subject }}</h1>
+                                    <h2>{{ subject }}</h2>
                                 {% endblock %}
                         <tr>
                             <td>
@@ -203,7 +207,7 @@
     </div>
     <div class="box2">
         {% if order %}
-            <table cellpadding="20" style=" border-collapse: separate; border-spacing: 20px 20px;">
+                                               <table cellpadding="20" style=" border-collapse: separate; border-spacing: 20px 20px;">
                 <tr>
                     <td >
 
@@ -214,8 +218,7 @@
 </div>
 
     <br><br> <br>
-<footer style="background-color: white; box-shadow: 5px 0 15px -2px rgb(165, 163, 163), -5px 0 8px -2px rgb(165, 163, 163);
-  font-family: 'Source Sans Pro', sans-serif;">
+<div class="fot" style="background-color: white; box-shadow: 5px 0 15px -2px rgb(165, 163, 163), -5px 0 8px -2px rgb(165, 163, 163); font-family: 'Source Sans Pro', sans-serif;">
 <div class="footer">
     <table>
         <tr>
@@ -224,40 +227,45 @@
 
     </td>
 
-    <td class="logo_div">
-        <ul class="logos">
-                <li class="logos_li"><img src="{% static 'pretix_nes_mail/Twitter.png' %}" alt="Twitter_Icon" style="vertical-align:middle; width: 20px; padding-right: 5px">
-                    {% with 'target="blank" href="https://netways.de"'|safe as a_attr %}
-    {% blocktrans trimmed %}   <a {{ a_attr }}>  netwaysevent   {% endblocktrans %}
-{% endwith %}</li>
-
-
-                <li class="logos_li"><img src="{% static 'pretix_nes_mail/Facebook.png' %}" alt="Facebook_image" style="vertical-align:middle; width: 20px; padding-right: 5px">
+    <td cass="logo_div">
+            <div class="logos">
+             <li class="logos_li">
+                    {% static 'pretix_nes_mail/Twitter.png' as yt_icon %}
+                    {% with 'target="blank" href="https://twitter.com/netwaysevents"'|safe as a_attr %}
+                    {% blocktrans trimmed %}
+                        <a {{ a_attr }} ><img src="{{ yt_icon }}" alt="" style="vertical-align:middle; width: 30px; padding-right: 4px"></a>
+                        <a {{ a_attr }} >    netways </a>   {% endblocktrans %}
+                    {% endwith %}</li>
+             <li class="logos_li">
+                    {% static 'pretix_nes_mail/Facebook.png' as fb_icon %}
                     {% with 'target="blank" href="https://de-de.facebook.com/netways"'|safe as a_attr %}
-                    {% blocktrans trimmed %}   <a {{ a_attr }}>    netways   {% endblocktrans %}
+                        {% blocktrans %}
+                            <a {{ a_attr }} > <img src="{{ fb_icon }}" alt="" style="vertical-align:middle; width: 30px; padding-right: 5px"> </a>
+                            <a {{ a_attr }} >    netways </a>  {% endblocktrans %}
                     {% endwith %}</li>
-
-
-                <li class="logos_li"><img src="{% static 'pretix_nes_mail/Instagram.png' %}" alt="Instagram_icon" style="vertical-align:middle; width: 20px; padding-right: 5px">
+                <li class="logos_li">
+                    {% static 'pretix_nes_mail/Instagram.png' as insta_icon %}
                     {% with 'target="blank" href="https://www.instagram.com/netwaysgmbh"'|safe as a_attr %}
-                    {% blocktrans trimmed %}   <a {{ a_attr }}>    netwaysgmbh   {% endblocktrans %}
+                    {% blocktrans %}
+                        <a {{ a_attr }}> <img src="{{ insta_icon }}" alt="" style="vertical-align:middle; width: 30px; padding-right: 4px"></a>
+                        <a {{ a_attr }}>    netwaysgmbh   {% endblocktrans %}
                     {% endwith %}</li>
-
-
-                <li ><img src="{% static 'pretix_nes_mail/YouTube.png' %}" alt="Youtube_icon" style="alignment: left;vertical-align:middle; width: 20px; padding-right: 5px"    >
+                <li >
+                {% static 'pretix_nes_mail/YouTube.png' as yt_icon %}
                  {% with 'target="blank" href="https://www.youtube.com/channel/UC8nIBEFmjzXjXeJV_hkkeIQ"'|safe as a_attr %}
-                    {% blocktrans trimmed %}   <a {{ a_attr }}>    netways   {% endblocktrans %}
+                   {% blocktrans  %}
+                        <a {{ a_attr }} > <img src="{{ yt_icon }}" alt="" style="alignment: left;vertical-align:middle; width: 30px; padding-right: 5px" ></a>
+                        <a {{ a_attr }}>    netways   {% endblocktrans %}
                     {% endwith %}</li>
-		</ul>
+                </div>
     </td>
-            <td style="width: 10%;  font-family: 'Source Sans Pro', sans-serif;">
-        <img src="{% static 'pretix_nes_mail/NES_Logo.png' %}" alt="NES_logo" style="vertical-align:middle; width: 50px; margin-left: 70px; padding-top: 75px;"></td>
-	</tr>
+        </tr>
         </table>
 </div>
     <br>
-    <br> 
-   </footer>
-   
+    <br>
+   </div>
+
 </html>
 </html>
+                                 
