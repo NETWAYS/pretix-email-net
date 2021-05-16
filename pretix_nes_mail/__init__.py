@@ -5,7 +5,7 @@ try:
 except ImportError:
     raise RuntimeError("Please use pretix 2.7 or above to run this plugin!")
 
-__version__ = "1.0."
+
 
 
 class PluginApp(PluginConfig):
@@ -14,12 +14,12 @@ class PluginApp(PluginConfig):
 
     class PretixPluginMeta:
         name = gettext_lazy("NES Mail")
-        author = "mk"
-        description = gettext_lazy("Short description")
+        author = "NETWAYS GmbH"
+        description = gettext_lazy("Custom Email Renderer for NETWAYS")
         visible = True
-        version = __version__
+        version = 1.0
         category = "CUSTOMIZATION"
-        compatibility = "pretix>=3"
+        
 
     def ready(self):
         from . import signals  # NOQA
