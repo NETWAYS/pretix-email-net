@@ -49,12 +49,20 @@
             height: auto;
             margin: auto;
             background-color: #feffff;
-            max-width: 100%;
+            max-width: 700px;
+            width: 100%;
             display : table;
+            align-content: space-between;
  }
  .signatur {
             padding-top: 25px;
             padding-left: 20px;
+            display: inline-block;
+            width: 50%;
+            min-width: 300px;
+            float: left;
+            margin-right: 30px;
+
          }
  .signatur a {
      text-decoration: none;
@@ -67,17 +75,13 @@
      color: #164857;
 
  }
- .logo_div {
-            margin-top: 20px;
-            width: 30%;
-            max-width: 700px;
-            border-collapse: separate;
-            border-spacing: 0px;
-            background-color: white;
-            alignment: center;
-            justify-content: center;
-            text-align: left;
- }
+.footer > div {
+    display: inline-block;
+    display: -moz-inline-box;
+    *display: inline; /* For IE7 */
+
+
+}
          .logos {
             display: inline-block;
             justify-content: space-around;
@@ -86,7 +90,8 @@
             float: left;
             width: auto;
             margin-top: 20px;
-            margin-left: 80px;
+             padding-left: 20px;
+
         }
 
          .logos a {
@@ -219,16 +224,14 @@
 
     <br><br> <br>
 <div class="fot" style="background-color: white; box-shadow: 5px 0 15px -2px rgb(165, 163, 163), -5px 0 8px -2px rgb(165, 163, 163); font-family: 'Source Sans Pro', sans-serif;">
-<div class="footer">
-    <table>
-        <tr>
-    <td class="signatur">
-     {{ signature | safe }}
+    <div class="footer">
+        <div class="signatur">
 
-    </td>
+            <!-- TODO: Here the minimum size of the div is hardcoded to 300px, for lack of a better solution -->
+        {{ signature | safe }}
+        </div>
 
-    <td cass="logo_div">
-            <div class="logos">
+        <div class="logos">
              <li class="logos_li">
                     {% static 'pretix_nes_mail/Twitter.png' as yt_icon %}
                     {% with 'target="blank" href="https://twitter.com/netwaysevents"'|safe as a_attr %}
@@ -257,15 +260,12 @@
                         <a {{ a_attr }} > <img src="{{ yt_icon }}" alt="" style="alignment: left;vertical-align:middle; width: 30px; padding-right: 5px" ></a>
                         <a {{ a_attr }}>    netways   {% endblocktrans %}
                     {% endwith %}</li>
-                </div>
-    </td>
-        </tr>
-        </table>
-</div>
-    <br>
-    <br>
-   </div>
+        </div>
+    </div>
 
-</html>
+
+    <br>
+    <br>
+</div>
 </html>
                                  
