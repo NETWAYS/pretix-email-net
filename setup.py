@@ -30,6 +30,7 @@ setup(
     version='1.0',
     description="Custom HTML Email Renderer for NETWAYS",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     url="https://github.com/NETWAYS/pretix-email-net",
     author="NETWAYS GmbH",
     author_email="support@netways.de",

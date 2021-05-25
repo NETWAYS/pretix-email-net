@@ -17,6 +17,7 @@ class PluginApp(PluginConfig):
         author = "NETWAYS GmbH"
         description = gettext_lazy("Custom Email Renderer for NETWAYS")
         visible = True
+        restricted = False 
         version = 1.0
         category = "CUSTOMIZATION"
         
