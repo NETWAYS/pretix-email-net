@@ -1,18 +1,11 @@
-NES Mail
-==========================
+This is a plugin for Pretix, which creates a custom template for emails.
+In the template you can optionally display an event logo in the upper left corner and the signature is selectable.
+The first two lines of the signature are in blue color.
 
-This is a plugin for `pretix`_. 
+To the right of the signature are four social media icons for Twitter, Youtube, Facebook and Instagram.
 
-
-Clone this repository
-
-`pip3 install <repository>`
-
-Move the NES.html file into the pretix templates folder, located under $Pythonpath/pretix/base/templates/pretixbase/email/ and name it NES.html
-
-migrate and rebuild Pretix with `python3 -m pretix migrate` and `python3 -m pretix rebuild` 
-restart the server 
-
-Enable the Plugin in the Plugin Selection, under Customization
+Installation:
+Install the plugin with ``pip install pretix-nes-email``.
+Then reconfigure Pretix with the commands ``python -m pretix rebuild && python migrate``
 
 
