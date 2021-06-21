@@ -1,19 +1,21 @@
-Dies ist ein Plugin für Pretix, das eine eigene Vorlage für E-Mails erstellt.
+This is a plugin for Pretix that creates a custom template for emails.
 
-Sie besteht aus 2 Boxen im Haupteil und einem Footer mit Signatur und Logos.
-In der ersten Box ist nach der Eventüberschrift der erste Paragraf mit der Begrüßung blau, der jeweilige Kundenname kann über die Email-Einstellungen unter "Email-Content" mit der Variable "{name}" oder "{name_for_salutation}" dynamisch eingestellt werden.
+It consists of 2 boxes in the main part and a footer with signature and logos. 
+In the first box, after the event title, the first paragraph with the greeting is blue, the respective customer name can be dynamically set via the email settings under ``Email Content`` with the variable ``{name}`` or ``{name_for_salutation}``.
 
-In der zweiten Box werden die Bestelldetails dargestellt
+In the second box the order details are displayed
 
-In der Vorlage können Sie optional ein Veranstaltungslogo in der linken oberen Ecke einblenden und die Signatur ist in der Pretix-GUI auswählbar.
+In the template you can optionally show an event logo in the upper left corner and the signature is selectable in the Pretix GUI.
 
-Die ersten beiden Zeilen der Signatur sind in blauer Farbe gehalten.
-Rechts neben der Signatur befinden sich 4 Social Media Icons mit Hyperlinks. Die URLs der Icons und Hyperlinks sind in der Fußzeile hartcodiert und müssen auf Wunsch manuell geändert werden.
+The first two lines of the signature are in blue color.
+To the right of the signature are 4 social media icons with hyperlinks. The URLs of the icons and hyperlinks are hardcoded in the footer and must be changed manually if desired.
 
-Rechts von der Signatur befinden sich vier Social Media Icons für Twitter, Youtube, Facebook und Instagram.
+To the right of the signature are four social media icons for Twitter, Youtube, Facebook and Instagram.
 
 Installation:
-Installieren Sie das Plugin mit ``pip install pretix-nes-email``.
-Dann konfigurieren Sie Pretix neu mit den Befehlen ``python -m pretix rebuild && python migrate``
-Dann starten Sie den Server neu mit ``systemctl restart pretix-web pretix-worker`` (je nach Installation)
+Install the plugin with ``pip install pretix-nes-email``.
+Then reconfigure Pretix with the commands ``python -m pretix rebuild && python migrate``.
+Then restart the server with ``systemctl restart pretix-web pretix-worker`` (depending on the installation)
 
+
+Translated with www.DeepL.com/Translator (free version)
