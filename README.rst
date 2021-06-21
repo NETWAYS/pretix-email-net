@@ -18,4 +18,3 @@ Then reconfigure Pretix with the commands ``python -m pretix rebuild && python m
 Then restart the server with ``systemctl restart pretix-web pretix-worker`` (depending on the installation)
 
 
-Translated with www.DeepL.com/Translator (free version)
