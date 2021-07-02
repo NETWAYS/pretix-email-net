@@ -26,8 +26,8 @@ cmdclass = {"build": CustomBuild}
 
 
 setup(
-    name="pretix_nes_mail",
-    version='1.4',
+    name="pretix_net_mail",
+    version='1.0',
     description="Custom HTML Email Renderer for NETWAYS",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -41,7 +41,7 @@ setup(
     cmdclass=cmdclass,
     entry_points="""
 [pretix.plugin]
-pretix_nes_mail=pretix_nes_mail:PretixPluginMeta
+pretix_net_mail=pretix_net_mail:PretixPluginMeta
 """,
 )
 

@@ -13,8 +13,11 @@ To the right of the signature are 4 social media icons with hyperlinks. The URLs
 To the right of the signature are four social media icons for Twitter, Youtube, Facebook and Instagram.
 
 Installation:
+
 Install the plugin with ``pip install pretix-nes-email``.
+
 Then reconfigure Pretix with the commands ``python -m pretix rebuild && python migrate``.
+
 Then restart the server with ``systemctl restart pretix-web pretix-worker`` (depending on the installation)
 
 

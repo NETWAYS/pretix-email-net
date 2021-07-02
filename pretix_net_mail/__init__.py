@@ -9,8 +9,8 @@ except ImportError:
 
 
 class PluginApp(PluginConfig):
-    name = "pretix_nes_mail"
-    verbose_name = "NES Mail"
+    name = "pretix_net_mail"
+    verbose_name = "NET Mail"
 
     class PretixPluginMeta:
         name = gettext_lazy("NES Mail")
@@ -18,7 +18,7 @@ class PluginApp(PluginConfig):
         description = gettext_lazy("Custom Email Renderer for NETWAYS")
         visible = True
         restricted = False 
-        version = 1.4
+        version = 1.0
         category = "CUSTOMIZATION"
         
 
@@ -26,4 +26,4 @@ class PluginApp(PluginConfig):
         from . import signals  # NOQA
 
 
-default_app_config = "pretix_nes_mail.PluginApp"
+default_app_config = "pretix_net_mail.PluginApp"

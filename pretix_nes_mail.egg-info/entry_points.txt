@@ -1,3 +1,0 @@
-
-[pretix.plugin]
-pretix_nes_mail=pretix_nes_mail:PretixPluginMeta
