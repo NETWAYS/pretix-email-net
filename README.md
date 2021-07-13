@@ -1,3 +1,5 @@
+# Pretix Email Template for NETWAYS
+
 This is a plugin for Pretix that creates a custom template for emails.
 
 It consists of 2 boxes in the main part and a footer with signature and logos. 
@@ -12,9 +14,9 @@ To the right of the signature are 4 social media icons with hyperlinks. The URLs
 
 To the right of the signature are four social media icons for Twitter, Youtube, Facebook and Instagram.
 
-Installation:
+## Installation:
 
-Install the plugin with ``pip install pretix-nes-email``.
+Install the plugin with ``pip install pretix-net-mail``.
 
 Then reconfigure Pretix with the commands ``python -m pretix rebuild && python migrate``.
 
