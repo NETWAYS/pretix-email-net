@@ -25,3 +25,9 @@ class ICINGAMailRenderer(TemplateBasedMailRenderer):
     thumbnail_filename = "pretix_net_mail/ICINGAthumb.png"
     template_name = "pretix_net_mail/ICINGA.html"
 
+class DOSTMailRenderer(TemplateBasedMailRenderer):
+    verbose_name = "DOST"
+    identifier = "dost"
+    thumbnail_filename = "pretix_net_mail/DOSTthumb.png"
+    template_name = "pretix_net_mail/DOST.html"
+
