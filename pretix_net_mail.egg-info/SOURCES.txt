@@ -17,11 +17,13 @@ pretix_net_mail/locale/de_Informal/.gitkeep
 pretix_net_mail/locale/de_Informal/LC_MESSAGES/django.mo
 pretix_net_mail/locale/de_Informal/LC_MESSAGES/django.po
 pretix_net_mail/static/pretix_net_mail/.gitkeep
+pretix_net_mail/static/pretix_net_mail/DOSTthumb.png
 pretix_net_mail/static/pretix_net_mail/ICINGAthumb.png
 pretix_net_mail/static/pretix_net_mail/NETthumb.png
 pretix_net_mail/static/pretix_net_mail/OSMCthumb.png
 pretix_net_mail/static/pretix_net_mail/STACKCONFthumb.png
 pretix_net_mail/templates/pretix_net_mail/.gitkeep
+pretix_net_mail/templates/pretix_net_mail/DOST.html
 pretix_net_mail/templates/pretix_net_mail/ICINGA.html
 pretix_net_mail/templates/pretix_net_mail/NES.html
 pretix_net_mail/templates/pretix_net_mail/OSMC.html
