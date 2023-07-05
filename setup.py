@@ -4,9 +4,6 @@ from distutils.command.build import build
 from django.core import management
 from setuptools import find_packages, setup
 
-
-
-
 try:
     with open(
         os.path.join(os.path.dirname(__file__), "README.rst"), encoding="utf-8"
@@ -27,7 +24,7 @@ cmdclass = {"build": CustomBuild}
 
 setup(
     name="pretix_net_mail",
-    version='1.3',
+    version='1.4.0',
     description="Custom HTML Email Renderer for NETWAYS",
     long_description=long_description,
     long_description_content_type="text/markdown",

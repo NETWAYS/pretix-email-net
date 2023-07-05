@@ -4,6 +4,7 @@ README.md
 pyproject.toml
 setup.py
 pretix_net_mail/__init__.py
+pretix_net_mail/apps.py
 pretix_net_mail/renderer.py
 pretix_net_mail/signals.py
 pretix_net_mail.egg-info/PKG-INFO
