@@ -31,3 +31,9 @@ class DOSTMailRenderer(TemplateBasedMailRenderer):
     thumbnail_filename = "pretix_net_mail/DOSTthumb.png"
     template_name = "pretix_net_mail/DOST.html"
 
+class OSCAMPMailRenderer(TemplateBasedMailRenderer):
+    verbose_name = "OSCAMP"
+    identifier = "oscamp"
+    thumbnail_filename = "pretix_net_mail/OSCAMPthumb.png"
+    template_name = "pretix_net_mail/OSCAMP.html"
+
