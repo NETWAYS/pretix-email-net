@@ -5,7 +5,7 @@ from pretix.base.signals import register_html_mail_renderers
 
 @receiver(register_html_mail_renderers, dispatch_uid="renderer_custom")
 def register_mail_renderers(sender, **kwargs):
-    from .renderer import NESMailRenderer, STACKCONFMailRenderer, OSMCMailRenderer, ICINGAMailRenderer, DOSTMailRenderer, OSCAMPMailRenderer
+    from .renderer import NESMailRenderer, STACKCONFMailRenderer, OSMCMailRenderer, ICINGAMailRenderer, DOSTMailRenderer, OSCAMPMailRenderer, PROXTALKSMailRenderer
 
-    return [NESMailRenderer, STACKCONFMailRenderer, OSMCMailRenderer, ICINGAMailRenderer, DOSTMailRenderer, OSCAMPMailRenderer]
+    return [NESMailRenderer, STACKCONFMailRenderer, OSMCMailRenderer, ICINGAMailRenderer, DOSTMailRenderer, OSCAMPMailRenderer, PROXTALKSMailRenderer]
 
