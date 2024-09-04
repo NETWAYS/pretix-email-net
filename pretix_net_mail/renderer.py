@@ -37,3 +37,9 @@ class OSCAMPMailRenderer(TemplateBasedMailRenderer):
     thumbnail_filename = "pretix_net_mail/OSCAMPthumb.png"
     template_name = "pretix_net_mail/OSCAMP.html"
 
+class PROXTALKSMailRenderer(TemplateBasedMailRenderer):
+    verbose_name = "PROXTALKS"
+    identifier = "proxtalks"
+    thumbnail_filename = "pretix_net_mail/PROXTALKSthumb.png"
+    template_name = "pretix_net_mail/PROXTALKS.html"
+
