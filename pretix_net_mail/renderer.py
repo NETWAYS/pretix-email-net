@@ -43,3 +43,9 @@ class PROXTALKSMailRenderer(TemplateBasedMailRenderer):
     thumbnail_filename = "pretix_net_mail/PROXTALKSthumb.png"
     template_name = "pretix_net_mail/PROXTALKS.html"
 
+class RACKSTACKMailRenderer(TemplateBasedMailRenderer):
+    verbose_name = "rackstack"
+    identifier = "rackstack"
+    thumbnail_filename = "pretix_net_mail/RACKSTACKthumb.png"
+    template_name = "pretix_net_mail/RACKSTACK.html"
+
