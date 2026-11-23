@@ -7,12 +7,6 @@ class NESMailRenderer(TemplateBasedMailRenderer):
     thumbnail_filename = "pretix_net_mail/NETthumb.png"
     template_name = "pretix_net_mail/NES.html"
 
-class STACKCONFMailRenderer(TemplateBasedMailRenderer):
-    verbose_name = "stackconf"
-    identifier = "stackconf"
-    thumbnail_filename = "pretix_net_mail/STACKCONFthumb.png"
-    template_name = "pretix_net_mail/STACKCONF.html"
-
 class OSMCMailRenderer(TemplateBasedMailRenderer):
     verbose_name = "OSMC"
     identifier = "osmc"
